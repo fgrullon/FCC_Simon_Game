@@ -1,0 +1,103 @@
+
+.game{
+	border-radius: 50%;
+	width: 350px;
+	height: 350px;
+	background-color: black;
+	position: relative;
+	z-index: 1;
+	left: 50%;
+    transform: translate(-50%, 0);
+}
+.panel { 
+	margin-top: 40px;
+	height: 100px;
+}
+
+.panel div{
+	float: left;
+	margin-left: 15px;
+}
+
+.panel p {
+	margin-top: 0;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+
+}
+.console{
+	position: absolute;
+	border-radius: 50%;
+	width: 180px;
+	height: 180px;
+	background-color: #DCDCDC;
+	z-index: 100;
+	left: 50%;
+	top: 85px;
+    transform: translate(-50%, 0);
+    border: 10px solid black;
+    float: left;
+}
+
+.btn-green, .btn-red, .btn-yellow, .btn-blue{
+	margin-left: 10px;
+	margin-top: 10px;
+	float: left;
+}
+
+.btn-blue{
+	width: 160px;
+	height: 160px;
+	border-radius: 0px 0px 200px 0px;
+	background-color: 	#0087BD;
+}
+
+.btn-red{
+	width: 160px;
+	height: 160px;
+	border-radius: 0px 200px 0px 0px;
+	background-color: 	#FF2400;
+}
+
+.btn-yellow{
+	width: 160px;
+	height: 160px;
+	border-radius: 0px 0px 0px 200px;
+	background-color: 	#FDFF00;
+}
+
+.btn-green{
+	width: 160px;
+	height: 160px;
+	border-radius: 200px 0px 0px 0px;
+	background-color: #90EE90;
+}
+
+.count {
+	width: 40px;
+	height: 25px;
+	background-color: #6C1717;
+	margin-left: 10px;
+	border: 2px solid black;
+
+
+}
+
+.start {
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-color: red;
+	border: 1px solid black;
+}
+
+.strict {
+	border-radius: 50%;
+	width: 17px;
+	height: 17px;
+	background-color: yellow;
+	border: 1px solid black;
+
+}

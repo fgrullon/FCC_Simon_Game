@@ -112,4 +112,7 @@
 	margin-left: 50px;
 }
 
+.disabled {
+    pointer-events: none;
+}
 

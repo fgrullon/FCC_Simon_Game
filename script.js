@@ -81,39 +81,48 @@ function addSet(set){
 function hightlight(set){
 
 	for (var i = 0; i < set.length; i++) {
-			setTimeout(function(){
 				switch(set[i]){
 					case 1:
-					document.getElementsByClassName("btn-green")[0].style.backgroundColor = "white";
+					console.log(1);
+					$(".btn-green").addClass('horizTranslate');
 					setTimeout(function(){
-						document.getElementsByClassName("btn-green")[0].style.backgroundColor = "green";
-					}
-					,5000);
+						
+						$(".btn-green").removeClass('horizTranslate');
+						
+					},2000);
+					
 					break;
 					case 2:
-					document.getElementsByClassName("btn-red")[0].style.backgroundColor = "white";
+					console.log(2);
+					$(".btn-red").addClass('horizTranslate');
 					setTimeout(function(){
-						document.getElementsByClassName("btn-red")[0].style.backgroundColor = "red";
-					}
-					,5000);
+						
+						$(".btn-red").removeClass('horizTranslate');
+						
+					},2000);
 					break;
 					case 3:
-					document.getElementsByClassName("btn-yellow")[0].style.backgroundColor = "white";
+					
+					$(".btn-yellow").addClass('horizTranslate');
+					console.log("add");
 					setTimeout(function(){
-						document.getElementsByClassName("btn-yellow")[0].style.backgroundColor = "yellow";
-					}
-					,5000);
+						
+						$(".btn-yellow").removeClass('horizTranslate');
+						console.log("remove");
+						
+					},2000);
 					break;
 					case 4:
-					document.getElementsByClassName("btn-blue")[0].style.backgroundColor = "white";
+					console.log(4);
+					$(".btn-blue").addClass('horizTranslate');
 					setTimeout(function(){
-						document.getElementsByClassName("btn-blue")[0].style.backgroundColor = "blue";
-					}
-					,5000);
+						
+						$(".btn-blue").removeClass('horizTranslate');
+						
+					},2000);
 					break;
 				}
 
-			},1000);
 	};
 
 }

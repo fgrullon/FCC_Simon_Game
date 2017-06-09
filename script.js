@@ -32,19 +32,17 @@ $(function(){
 	$(".start").click(function(){
 		var count = 0;
 		var autoArr = [];
-		var userArr = [];
+
 
 		run(autoArr);
 
 		$(".game").on('click', function(evt) {
+			var userArr = [];
 			
-			
-			console.log("User: "+evt.target.id);
 			if(autoArr[autoArr.length - 1] != evt.target.id){
 				alert("WRONG");
 			}else{
 				userArr.push(evt.target.id);
-				console.log("Auto: "+autoArr);
 			} 
 
 
@@ -83,43 +81,36 @@ function hightlight(set){
 	for (var i = 0; i < set.length; i++) {
 				switch(set[i]){
 					case 1:
-					console.log(1);
 					$(".btn-green").addClass('horizTranslate');
 					setTimeout(function(){
 						
 						$(".btn-green").removeClass('horizTranslate');
 						
-					},2000);
-					
+					},500);
 					break;
 					case 2:
-					console.log(2);
 					$(".btn-red").addClass('horizTranslate');
 					setTimeout(function(){
 						
 						$(".btn-red").removeClass('horizTranslate');
 						
-					},2000);
+					},500);
 					break;
 					case 3:
-					
 					$(".btn-yellow").addClass('horizTranslate');
-					console.log("add");
 					setTimeout(function(){
 						
 						$(".btn-yellow").removeClass('horizTranslate');
-						console.log("remove");
 						
-					},2000);
+					},500);
 					break;
 					case 4:
-					console.log(4);
 					$(".btn-blue").addClass('horizTranslate');
 					setTimeout(function(){
 						
 						$(".btn-blue").removeClass('horizTranslate');
 						
-					},2000);
+					},500);
 					break;
 				}
 

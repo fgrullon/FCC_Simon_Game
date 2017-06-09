@@ -51,28 +51,28 @@
 	width: 160px;
 	height: 160px;
 	border-radius: 0px 0px 200px 0px;
-	background-color: 	#0087BD;
+	background-color: 	#0000FF;
 }
 
 .btn-red{
 	width: 160px;
 	height: 160px;
 	border-radius: 0px 200px 0px 0px;
-	background-color: 	#FF2400;
+	background-color: 	#CE2029;
 }
 
 .btn-yellow{
 	width: 160px;
 	height: 160px;
 	border-radius: 0px 0px 0px 200px;
-	background-color: 	#FDFF00;
+	background-color: 	#FFD700;
 }
 
 .btn-green{
 	width: 160px;
 	height: 160px;
 	border-radius: 200px 0px 0px 0px;
-	background-color: #90EE90;
+	background-color: #03C03C;
 }
 
 .count {
@@ -118,10 +118,10 @@
 
 
 .horizTranslate {
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
-  background-color: red;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0.6;
 }

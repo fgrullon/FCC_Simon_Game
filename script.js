@@ -30,6 +30,7 @@ $(function(){
 	
 	//On Click in Start Button
 	$(".start").click(function(){
+		//hightlight();
 		var count = 0;
 		var autoArr = [];
 
@@ -67,7 +68,7 @@ $(function(){
 
 });
 
-
+var setArr = [];
 function addSet(set){
 	var number = Math.floor(Math.random() * 4 + 1);
 	set.push(number);
@@ -76,17 +77,24 @@ function addSet(set){
 }
 
 
-function hightlight(set){
+var timeFrame=10000;
 
-	for (var i = 0; i < set.length; i++) {
-				switch(set[i]){
+var interval=timeFrame/setArr.length-1;
+var i=0;
+
+
+function hightlight(set) {
+
+		for (var j = 0; j < set.length; j++) {
+		i++;
+		switch(set[j]){
 					case 1:
 					$(".btn-green").addClass('horizTranslate');
 					setTimeout(function(){
 						
 						$(".btn-green").removeClass('horizTranslate');
 						
-					},500);
+					},800);
 					break;
 					case 2:
 					$(".btn-red").addClass('horizTranslate');
@@ -94,7 +102,7 @@ function hightlight(set){
 						
 						$(".btn-red").removeClass('horizTranslate');
 						
-					},500);
+					},800);
 					break;
 					case 3:
 					$(".btn-yellow").addClass('horizTranslate');
@@ -102,7 +110,7 @@ function hightlight(set){
 						
 						$(".btn-yellow").removeClass('horizTranslate');
 						
-					},500);
+					},800);
 					break;
 					case 4:
 					$(".btn-blue").addClass('horizTranslate');
@@ -110,13 +118,17 @@ function hightlight(set){
 						
 						$(".btn-blue").removeClass('horizTranslate');
 						
-					},500);
+					},800);
 					break;
 				}
-
 	};
+	
+	if(i < set.length){
 
+	    setTimeout(hightlight(setArr), interval);
+	}
 }
+
 
 function run(set){
 		addSet(set);

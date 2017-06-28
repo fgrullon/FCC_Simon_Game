@@ -1,7 +1,7 @@
 /*
 1. ON / OFF Button disable and enable the console div.    *
-2. Count show 00 when ON
-3. Create and array and add a random number to it
+2. Count show 00 when ON *
+3. Create and array and add a random number to it *
 4. highlight the div with the number in the array
 5. Add one to Count
 6. Wait to the user click the div
@@ -33,23 +33,39 @@ $(function(){
 		//hightlight();
 		var count = 0;
 		var autoArr = [];
-
+		
 
 		run(autoArr);
-
+		var userArr = [];
 		$(".game").on('click', function(evt) {
-			var userArr = [];
 			
-			if(autoArr[autoArr.length - 1] != evt.target.id){
-				alert("WRONG");
-			}else{
-				userArr.push(evt.target.id);
-			} 
-
-
+			
+			//console.log(autoArr[autoArr.length - 1] +" : "+ evt.target.id);
+			//console.log(autoArr[autoArr.length - 1] == evt.target.id)
+			userArr.push(evt.target.id);
+			console.log(userArr);
+			if(autoArr[userArr.length - 1] != userArr[userArr.length - 1]){
+				console.log("Wrong");
+				document.getElementsByClassName("count")[0].innerText = "!!";
+			}
+				
+				
 			if(autoArr.length === userArr.length){
+				var igual = compareArr(autoArr, userArr);
 
-				run(autoArr);
+				if(igual){
+					if(userArr.length === 20){
+						alert("You win!!!")
+					}else{
+						userArr = [];
+						run(autoArr);
+					}
+					
+				}
+
+			}
+
+			{
 
 
 			}
@@ -63,7 +79,6 @@ $(function(){
 		alert("click strict");
 	});
 
-//firstElementChild: div#green.btn-green
 
 
 });
@@ -72,62 +87,49 @@ var setArr = [];
 function addSet(set){
 	var number = Math.floor(Math.random() * 4 + 1);
 	set.push(number);
-
+	console.log("System: "+set);
 	return set;
 }
 
-
-var timeFrame=10000;
-
-var interval=timeFrame/setArr.length-1;
-var i=0;
-
-
-function hightlight(set) {
-
-		for (var j = 0; j < set.length; j++) {
+/*
+function hightlight(arreglo) {
+		i = 0;
+		console.log(arreglo);
+		for (var j = 0; j < 1; j++) {
 		i++;
-		switch(set[j]){
+		var who = "";
+		switch(arreglo[j]){
 					case 1:
-					$(".btn-green").addClass('horizTranslate');
-					setTimeout(function(){
-						
-						$(".btn-green").removeClass('horizTranslate');
-						
-					},800);
+					who = ".btn-green";
+					$who.addClass('horizTranslate');				
 					break;
 					case 2:
-					$(".btn-red").addClass('horizTranslate');
-					setTimeout(function(){
-						
-						$(".btn-red").removeClass('horizTranslate');
-						
-					},800);
+					who = ".btn-red";
+					$who.addClass('horizTranslate');
 					break;
 					case 3:
-					$(".btn-yellow").addClass('horizTranslate');
-					setTimeout(function(){
-						
-						$(".btn-yellow").removeClass('horizTranslate');
-						
-					},800);
+					who = ".btn-yellow";
+					$who.addClass('horizTranslate');
 					break;
 					case 4:
-					$(".btn-blue").addClass('horizTranslate');
-					setTimeout(function(){
-						
-						$(".btn-blue").removeClass('horizTranslate');
-						
-					},800);
+					who = ".btn-blue";
+					$who.addClass('horizTranslate');
 					break;
 				}
-	};
+		setTimeout(function(){
+						
+			$who.removeClass('horizTranslate');
+						
+					},800);		
+		};
 	
-	if(i < set.length){
+	if(i < arreglo.length){
 
 	    setTimeout(hightlight(setArr), interval);
 	}
 }
+*/
+
 
 
 function run(set){
@@ -137,7 +139,19 @@ function run(set){
 		if(count < 10){ count = "0"+count; }
 		document.getElementsByClassName("count")[0].innerText = count;
 
-		hightlight(set);
+		//hightlight(set);
 }
 
+function compareArr(a, b){
+	var igual = true;
 
+		for(var i=0; i < a.length; i++){
+			if(a[i] != b[i]){
+				igual = false;
+			}
+
+		}
+
+	return igual;
+
+}

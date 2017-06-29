@@ -59,6 +59,7 @@ $(function(){
 					}else{
 						userArr = [];
 						run(autoArr);
+
 					}
 					
 				}
@@ -91,44 +92,44 @@ function addSet(set){
 	return set;
 }
 
-/*
+
 function hightlight(arreglo) {
 		i = 0;
-		console.log(arreglo);
-		for (var j = 0; j < 1; j++) {
+		
+		for (var j = 0; j < arreglo.length; j++) {
+		console.log("Hi: "+j);
 		i++;
 		var who = "";
 		switch(arreglo[j]){
 					case 1:
-					who = ".btn-green";
-					$who.addClass('horizTranslate');				
+					$(".btn-green").addClass('horizTranslate');				
 					break;
 					case 2:
-					who = ".btn-red";
-					$who.addClass('horizTranslate');
+					$(".btn-red").addClass('horizTranslate');
 					break;
 					case 3:
-					who = ".btn-yellow";
-					$who.addClass('horizTranslate');
+					$(".btn-yellow").addClass('horizTranslate');
 					break;
 					case 4:
-					who = ".btn-blue";
-					$who.addClass('horizTranslate');
+					$(".btn-blue").addClass('horizTranslate');
 					break;
 				}
 		setTimeout(function(){
 						
-			$who.removeClass('horizTranslate');
+			$(".btn-green").removeClass('horizTranslate');
+			$(".btn-red").removeClass('horizTranslate');
+			$(".btn-yellow").removeClass('horizTranslate');
+			$(".btn-blue").removeClass('horizTranslate');
 						
 					},800);		
 		};
 	
 	if(i < arreglo.length){
 
-	    setTimeout(hightlight(setArr), interval);
+	    setTimeout(hightlight(setArr), 500);
 	}
 }
-*/
+
 
 
 
@@ -139,7 +140,8 @@ function run(set){
 		if(count < 10){ count = "0"+count; }
 		document.getElementsByClassName("count")[0].innerText = count;
 
-		//hightlight(set);
+		hightlight(set);
+
 }
 
 function compareArr(a, b){

@@ -42,10 +42,10 @@ $(function(){
 			
 			//console.log(autoArr[autoArr.length - 1] +" : "+ evt.target.id);
 			//console.log(autoArr[autoArr.length - 1] == evt.target.id)
-			userArr.push(evt.target.id);
-			console.log(userArr);
+			userArr.push(evt.target.className);
+			console.log(evt.target.className);
 			if(autoArr[userArr.length - 1] != userArr[userArr.length - 1]){
-				console.log("Wrong");
+		
 				document.getElementsByClassName("count")[0].innerText = "!!";
 			}
 				
@@ -87,49 +87,44 @@ $(function(){
 var setArr = [];
 function addSet(set){
 	var number = Math.floor(Math.random() * 4 + 1);
-	set.push(number);
+	var word = "";
+	if( number === 1){
+		word = "btn-green"
+	}else if( number === 2){
+		word = "btn-red"
+	}else if( number === 3){
+		word = "btn-yellow"
+	}else{
+		word = "btn-blue"
+	}
+	set.push(word);
 	console.log("System: "+set);
 	return set;
 }
 
 
 function hightlight(arreglo) {
-		i = 0;
-		
-		for (var j = 0; j < arreglo.length; j++) {
-		console.log("Hi: "+j);
-		i++;
-		var who = "";
-		switch(arreglo[j]){
-					case 1:
-					$(".btn-green").addClass('horizTranslate');				
-					break;
-					case 2:
-					$(".btn-red").addClass('horizTranslate');
-					break;
-					case 3:
-					$(".btn-yellow").addClass('horizTranslate');
-					break;
-					case 4:
-					$(".btn-blue").addClass('horizTranslate');
-					break;
-				}
-		setTimeout(function(){
-						
-			$(".btn-green").removeClass('horizTranslate');
-			$(".btn-red").removeClass('horizTranslate');
-			$(".btn-yellow").removeClass('horizTranslate');
-			$(".btn-blue").removeClass('horizTranslate');
-						
-					},800);		
-		};
-	
-	if(i < arreglo.length){
-
-	    setTimeout(hightlight(setArr), 500);
-	}
+  var i = 0;
+  var moves = setInterval(function(){
+    playGame(arreglo[i]);
+    i++;
+    if (i >= arreglo.length) {
+      clearInterval(moves);
+    }
+  }, 600)
+  
 }
 
+function playGame(field) {
+	console.log("field: "+field);
+  $("."+field).addClass('horizTranslate');
+  //playSound(field);
+  var audio = new Audio("audio/"+field+".mp3");
+  audio.play();
+  setTimeout(function(){
+      $("."+field).removeClass('horizTranslate');
+  }, 400);
+}
 
 
 
@@ -157,3 +152,5 @@ function compareArr(a, b){
 	return igual;
 
 }
+
+

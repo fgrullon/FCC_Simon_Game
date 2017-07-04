@@ -3,7 +3,7 @@
 <head>
 	<title>Simon Game</title>
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="script.js"></script>
+	<script src="js/script.js"></script>
 	<link rel="stylesheet" href="style.css" />
 
 </head>
@@ -20,10 +20,21 @@
 		<div class="console">
 			
 			<div class="panel disabled">
-				<p>Simon</p>
-			<div class="count">00</div>
-			<div class="start"></div>
-			<div class="strict"></div>
+				<p class="title">Simon</p>
+				<div id="count">
+					<div class="count">--</div>
+				</div>
+				<div id="start">
+					<p >Start</p>
+					<div class="start"></div>
+				</div>
+				<div id="strict">
+					<p >Strict</p>
+					<div class="light"></div><br>
+					<div class="strict"></div>
+				</div>
+			
+			
 			</div>
 			<input type="checkbox" class="power">On / Off
 

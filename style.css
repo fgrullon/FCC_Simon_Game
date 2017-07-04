@@ -16,10 +16,10 @@
 
 .panel div{
 	float: left;
-	margin-left: 15px;
+	margin-left: 5px;
 }
 
-.panel p {
+.title {
 	margin-top: 0;
 	text-align: center;
 	font-weight: bold;
@@ -27,6 +27,7 @@
 	font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
 
 }
+
 .console{
 	position: absolute;
 	border-radius: 50%;
@@ -88,6 +89,15 @@
 
 }
 
+#start {
+	margin-left: 5px;
+}
+#start, #strict {
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: -30px;
+	margin-left: 15px;
+}
 
 
 .start {
@@ -98,12 +108,23 @@
 	border: 1px solid black;
 }
 
+.light {
+	margin-top: -10px;
+	border-radius: 50%;
+	width: 7px;
+	height: 7px;
+	background-color: black;
+	border: 1px solid black;
+	margin-left: 9px !important;
+}
+
 .strict {
 	border-radius: 50%;
 	width: 17px;
 	height: 17px;
 	background-color: yellow;
 	border: 1px solid black;
+	margin-top: -15px;
 
 }
 
@@ -123,5 +144,5 @@
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  opacity: 0.6;
+  opacity: 0.5;
 }

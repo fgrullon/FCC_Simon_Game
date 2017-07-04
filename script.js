@@ -17,6 +17,8 @@
 
 $(function(){
 
+	var strict = false;
+
 	$(".power").click(function(){
 		if(document.getElementsByClassName("power")[0].checked){
 			$(".game").removeClass("disabled");
@@ -30,23 +32,26 @@ $(function(){
 	
 	//On Click in Start Button
 	$(".start").click(function(){
-		//hightlight();
 		var count = 0;
 		var autoArr = [];
 		
 
-		run(autoArr);
+		addSet(autoArr);
 		var userArr = [];
 		$(".game").on('click', function(evt) {
 			
-			
-			//console.log(autoArr[autoArr.length - 1] +" : "+ evt.target.id);
-			//console.log(autoArr[autoArr.length - 1] == evt.target.id)
 			userArr.push(evt.target.className);
-			console.log(evt.target.className);
+			
 			if(autoArr[userArr.length - 1] != userArr[userArr.length - 1]){
-		
-				document.getElementsByClassName("count")[0].innerText = "!!";
+				if(strict === true){
+					userArr = [];
+					autoArr = [];
+					addSet([]);
+				}else{
+					run(autoArr);
+					document.getElementsByClassName("count")[0].innerText = "!!";
+				}
+				
 			}
 				
 				
@@ -58,7 +63,7 @@ $(function(){
 						alert("You win!!!")
 					}else{
 						userArr = [];
-						run(autoArr);
+						addSet(autoArr);
 
 					}
 					
@@ -77,7 +82,13 @@ $(function(){
 
 	//On Click in Start Button
 	$(".strict").click(function(){
-		alert("click strict");
+		if(strict){
+			strict = false;
+		}else{
+			strict = true;
+		}
+		
+		document.getElementsByClassName("light")[0].style.backgroundColor = "red";
 	});
 
 
@@ -98,8 +109,7 @@ function addSet(set){
 		word = "btn-blue"
 	}
 	set.push(word);
-	console.log("System: "+set);
-	return set;
+	run(set);
 }
 
 
@@ -116,9 +126,7 @@ function hightlight(arreglo) {
 }
 
 function playGame(field) {
-	console.log("field: "+field);
   $("."+field).addClass('horizTranslate');
-  //playSound(field);
   var audio = new Audio("audio/"+field+".mp3");
   audio.play();
   setTimeout(function(){
@@ -129,8 +137,6 @@ function playGame(field) {
 
 
 function run(set){
-		addSet(set);
-
 		count = set.length;
 		if(count < 10){ count = "0"+count; }
 		document.getElementsByClassName("count")[0].innerText = count;

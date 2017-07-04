@@ -32,6 +32,7 @@ $(function(){
 	
 	//On Click in Start Button
 	$(".start").click(function(){
+		//hightlight();
 		var count = 0;
 		var autoArr = [];
 		
@@ -41,12 +42,15 @@ $(function(){
 		$(".game").on('click', function(evt) {
 			
 			userArr.push(evt.target.className);
+			//console.log(autoArr[userArr.length - 1] +" : "+ userArr[userArr.length - 1]);
+			console.log(autoArr);
 			
 			if(autoArr[userArr.length - 1] != userArr[userArr.length - 1]){
 				if(strict === true){
 					userArr = [];
 					autoArr = [];
 					addSet([]);
+					//console.log(userArr[userArr.length - 1]);
 				}else{
 					run(autoArr);
 					document.getElementsByClassName("count")[0].innerText = "!!";
@@ -109,6 +113,7 @@ function addSet(set){
 		word = "btn-blue"
 	}
 	set.push(word);
+	//return set;
 	run(set);
 }
 
@@ -137,6 +142,7 @@ function playGame(field) {
 
 
 function run(set){
+		//addSet(set);
 		count = set.length;
 		if(count < 10){ count = "0"+count; }
 		document.getElementsByClassName("count")[0].innerText = count;
@@ -159,4 +165,6 @@ function compareArr(a, b){
 
 }
 
+
+//
 
